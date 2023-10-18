@@ -13,3 +13,4 @@ int main() {
     printf("Enter the string: ");
     yylex();
 }
+
