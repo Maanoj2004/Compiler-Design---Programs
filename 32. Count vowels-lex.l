@@ -15,4 +15,5 @@ int main () {
     yylex ();
     printf("Vowels: %d\n", vow_count);
     return 0;
+
 }
