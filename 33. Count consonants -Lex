@@ -1,0 +1,18 @@
+%{
+int consonantCount = 0;
+%}
+
+%%
+[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ] { consonantCount++; }
+[aeiouAEIOU] 
+. 
+
+%%
+
+int yywrap(){}
+
+int main() {
+    printf("\nEnter the string: ");
+    yylex();
+    printf("\nConsonants: %d\n",consonantCount);
+}
