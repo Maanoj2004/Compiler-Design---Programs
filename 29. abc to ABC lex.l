@@ -1,18 +1,15 @@
 %{
-int ln=0;
+#include <ctype.h>
 %}
 
 %%
-
-.* {ln++;fprintf(yyout,"%d. %s",ln,yytext);}
-
+[a-z] { printf("%c", toupper(yytext[0])); }
+.|\n { printf("%c", yytext[0]); }
 %%
 
 int yywrap(){}
 
-int main()
-{
-yyin=fopen("sample.txt","r");
-yyout=fopen("out.txt","w");
-yylex();
+int main() {
+    printf("Enter the string: ");
+    yylex();
 }
